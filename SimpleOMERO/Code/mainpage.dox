@@ -1,0 +1,20 @@
+/**
+\mainpage
+* Code at: https://github.com/emilroz/RP/tree/Dev/libs/SimpleOMERO/Code
+
+* Example use of the Connector class:
+
+* \code
+* simple_omero::connector *Omero = new simple_omero::connector();
+* Omero->connect("server", "port", "user", "password");
+* \endcode
+* Example use of the Image class:
+* \code
+* int image_id = 1;
+* simple_omero::connector *Omero = new simple_omero::connector();
+* Omero->connect("server", "port", "user", "password");
+* simple_omero::image *image = new simple_omero::image(
+*     Omero->get_session(), image_id
+* );
+* \endcode
+*/
