@@ -17,37 +17,37 @@
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  */
 
-#include <omero/model/TimeI.h>
+#include <omero/model/FrequencyI.h>
 
-::Ice::Object* IceInternal::upCast(::omero::model::TimeI* t) { return t; }
+::Ice::Object* IceInternal::upCast(::omero::model::FrequencyI* t) { return t; }
 
 namespace omero {
 
     namespace model {
 
-        TimeI::~TimeI() {}
+        FrequencyI::~FrequencyI() {}
 
-        TimeI::TimeI() : Time() {
+        FrequencyI::FrequencyI() : Frequency() {
         }
 
-        Ice::Double TimeI::getValue(const Ice::Current& /* current */) {
+        Ice::Double FrequencyI::getValue(const Ice::Current& /* current */) {
             return value;
         }
 
-        void TimeI::setValue(Ice::Double _value, const Ice::Current& /* current */) {
+        void FrequencyI::setValue(Ice::Double _value, const Ice::Current& /* current */) {
             value = _value;
         }
 
-        omero::model::enums::UnitsTime TimeI::getUnit(const Ice::Current& /* current */) {
+        omero::model::enums::UnitsFrequency FrequencyI::getUnit(const Ice::Current& /* current */) {
             return unit;
         }
 
-        void TimeI::setUnit(omero::model::enums::UnitsTime _unit, const Ice::Current& /* current */) {
+        void FrequencyI::setUnit(omero::model::enums::UnitsFrequency _unit, const Ice::Current& /* current */) {
             unit = _unit;
         }
 
-        TimePtr TimeI::copy(const Ice::Current& /* current */) {
-            TimePtr copy = new TimeI();
+        FrequencyPtr FrequencyI::copy(const Ice::Current& /* current */) {
+            FrequencyPtr copy = new FrequencyI();
             copy->setValue(getValue());
             copy->setUnit(getUnit());
             return copy;

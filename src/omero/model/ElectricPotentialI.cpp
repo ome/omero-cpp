@@ -17,37 +17,37 @@
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  */
 
-#include <omero/model/TimeI.h>
+#include <omero/model/ElectricPotentialI.h>
 
-::Ice::Object* IceInternal::upCast(::omero::model::TimeI* t) { return t; }
+::Ice::Object* IceInternal::upCast(::omero::model::ElectricPotentialI* t) { return t; }
 
 namespace omero {
 
     namespace model {
 
-        TimeI::~TimeI() {}
+        ElectricPotentialI::~ElectricPotentialI() {}
 
-        TimeI::TimeI() : Time() {
+        ElectricPotentialI::ElectricPotentialI() : ElectricPotential() {
         }
 
-        Ice::Double TimeI::getValue(const Ice::Current& /* current */) {
+        Ice::Double ElectricPotentialI::getValue(const Ice::Current& /* current */) {
             return value;
         }
 
-        void TimeI::setValue(Ice::Double _value, const Ice::Current& /* current */) {
+        void ElectricPotentialI::setValue(Ice::Double _value, const Ice::Current& /* current */) {
             value = _value;
         }
 
-        omero::model::enums::UnitsTime TimeI::getUnit(const Ice::Current& /* current */) {
+        omero::model::enums::UnitsElectricPotential ElectricPotentialI::getUnit(const Ice::Current& /* current */) {
             return unit;
         }
 
-        void TimeI::setUnit(omero::model::enums::UnitsTime _unit, const Ice::Current& /* current */) {
+        void ElectricPotentialI::setUnit(omero::model::enums::UnitsElectricPotential _unit, const Ice::Current& /* current */) {
             unit = _unit;
         }
 
-        TimePtr TimeI::copy(const Ice::Current& /* current */) {
-            TimePtr copy = new TimeI();
+        ElectricPotentialPtr ElectricPotentialI::copy(const Ice::Current& /* current */) {
+            ElectricPotentialPtr copy = new ElectricPotentialI();
             copy->setValue(getValue());
             copy->setUnit(getUnit());
             return copy;
