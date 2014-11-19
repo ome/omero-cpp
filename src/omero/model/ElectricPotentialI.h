@@ -17,11 +17,11 @@
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  */
 
-#ifndef OMERO_MODEL_TIMEI_H
-#define OMERO_MODEL_TIMEI_H
+#ifndef OMERO_MODEL_ELECTRICPOTENTIALI_H
+#define OMERO_MODEL_ELECTRICPOTENTIALI_H
 
 #include <omero/IceNoWarnPush.h>
-#include <omero/model/Time.h>
+#include <omero/model/ElectricPotential.h>
 #include <omero/model/Units.h>
 #include <omero/IceNoWarnPop.h>
 
@@ -35,26 +35,26 @@
 
 namespace omero {
   namespace model {
-    class TimeI;
+    class ElectricPotentialI;
   }
 }
 
 namespace IceInternal {
-  OMERO_CLIENT ::Ice::Object* upCast(::omero::model::TimeI*);
+  OMERO_CLIENT ::Ice::Object* upCast(::omero::model::ElectricPotentialI*);
 }
 
 namespace omero {
   namespace model {
 
-    typedef IceInternal::Handle<TimeI> TimeIPtr;
+    typedef IceInternal::Handle<ElectricPotentialI> ElectricPotentialIPtr;
 
-    class OMERO_CLIENT TimeI : virtual public Time {
+    class OMERO_CLIENT ElectricPotentialI : virtual public ElectricPotential {
 
     protected:
-        virtual ~TimeI(); // protected as outlined in Ice docs.
+        virtual ~ElectricPotentialI(); // protected as outlined in Ice docs.
 
     public:
-        TimeI();
+        ElectricPotentialI();
 
         virtual Ice::Double getValue(
                 const Ice::Current& current = Ice::Current());
@@ -63,18 +63,18 @@ namespace omero {
                 Ice::Double value,
                 const Ice::Current& current = Ice::Current());
 
-        virtual omero::model::enums::UnitsTime getUnit(
+        virtual omero::model::enums::UnitsElectricPotential getUnit(
                 const Ice::Current& current = Ice::Current());
 
         virtual void setUnit(
-                omero::model::enums::UnitsTime unit,
+                omero::model::enums::UnitsElectricPotential unit,
                 const Ice::Current& current = Ice::Current());
 
-        virtual TimePtr copy(
+        virtual ElectricPotentialPtr copy(
                 const Ice::Current& = Ice::Current());
 
     };
   }
 }
-#endif // OMERO_MODEL_TIMEI_H
+#endif // OMERO_MODEL_ELECTRICPOTENTIALI_H
 

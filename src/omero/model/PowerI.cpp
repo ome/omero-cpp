@@ -17,37 +17,37 @@
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  */
 
-#include <omero/model/TimeI.h>
+#include <omero/model/PowerI.h>
 
-::Ice::Object* IceInternal::upCast(::omero::model::TimeI* t) { return t; }
+::Ice::Object* IceInternal::upCast(::omero::model::PowerI* t) { return t; }
 
 namespace omero {
 
     namespace model {
 
-        TimeI::~TimeI() {}
+        PowerI::~PowerI() {}
 
-        TimeI::TimeI() : Time() {
+        PowerI::PowerI() : Power() {
         }
 
-        Ice::Double TimeI::getValue(const Ice::Current& /* current */) {
+        Ice::Double PowerI::getValue(const Ice::Current& /* current */) {
             return value;
         }
 
-        void TimeI::setValue(Ice::Double _value, const Ice::Current& /* current */) {
+        void PowerI::setValue(Ice::Double _value, const Ice::Current& /* current */) {
             value = _value;
         }
 
-        omero::model::enums::UnitsTime TimeI::getUnit(const Ice::Current& /* current */) {
+        omero::model::enums::UnitsPower PowerI::getUnit(const Ice::Current& /* current */) {
             return unit;
         }
 
-        void TimeI::setUnit(omero::model::enums::UnitsTime _unit, const Ice::Current& /* current */) {
+        void PowerI::setUnit(omero::model::enums::UnitsPower _unit, const Ice::Current& /* current */) {
             unit = _unit;
         }
 
-        TimePtr TimeI::copy(const Ice::Current& /* current */) {
-            TimePtr copy = new TimeI();
+        PowerPtr PowerI::copy(const Ice::Current& /* current */) {
+            PowerPtr copy = new PowerI();
             copy->setValue(getValue());
             copy->setUnit(getUnit());
             return copy;

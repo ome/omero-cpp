@@ -17,37 +17,37 @@
  * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
  */
 
-#include <omero/model/TimeI.h>
+#include <omero/model/TemperatureI.h>
 
-::Ice::Object* IceInternal::upCast(::omero::model::TimeI* t) { return t; }
+::Ice::Object* IceInternal::upCast(::omero::model::TemperatureI* t) { return t; }
 
 namespace omero {
 
     namespace model {
 
-        TimeI::~TimeI() {}
+        TemperatureI::~TemperatureI() {}
 
-        TimeI::TimeI() : Time() {
+        TemperatureI::TemperatureI() : Temperature() {
         }
 
-        Ice::Double TimeI::getValue(const Ice::Current& /* current */) {
+        Ice::Double TemperatureI::getValue(const Ice::Current& /* current */) {
             return value;
         }
 
-        void TimeI::setValue(Ice::Double _value, const Ice::Current& /* current */) {
+        void TemperatureI::setValue(Ice::Double _value, const Ice::Current& /* current */) {
             value = _value;
         }
 
-        omero::model::enums::UnitsTime TimeI::getUnit(const Ice::Current& /* current */) {
+        omero::model::enums::UnitsTemperature TemperatureI::getUnit(const Ice::Current& /* current */) {
             return unit;
         }
 
-        void TimeI::setUnit(omero::model::enums::UnitsTime _unit, const Ice::Current& /* current */) {
+        void TemperatureI::setUnit(omero::model::enums::UnitsTemperature _unit, const Ice::Current& /* current */) {
             unit = _unit;
         }
 
-        TimePtr TimeI::copy(const Ice::Current& /* current */) {
-            TimePtr copy = new TimeI();
+        TemperaturePtr TemperatureI::copy(const Ice::Current& /* current */) {
+            TemperaturePtr copy = new TemperatureI();
             copy->setValue(getValue());
             copy->setUnit(getUnit());
             return copy;
